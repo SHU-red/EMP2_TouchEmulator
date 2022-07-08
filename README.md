@@ -55,8 +55,8 @@ Yellow Connector as shown below:
 | --- | --- | --- |
 | tbd | Ground | tbd |
 | 29 | 5V USB Supply | ?Green? |
-| 34 | CAN INFO DIV High | BROWN |
-| 36 | CAN INFO DIV Low | BLUE |
+| 34 | CAN INFO DIV High | Brown |
+| 36 | CAN INFO DIV Low | Blue |
 
 ### Baudrate
 - 125 kBaud

@@ -56,9 +56,8 @@ Yellow Connector as shown below:
 - 125 kBaud
 
 ### Toggle StartStop
-| <!-- --> | <!-- --> |
-| --- | --- |
 | Message ID | 0x1A9 |
+| --- | --- |
 | Byte | 6 |
 | Bit | 7 |
 
@@ -68,6 +67,7 @@ Yellow Connector as shown below:
 
 ### Activate Android Auto
 | Message ID | tbd |
+| --- | --- |
 | Byte | tbd |
 | Bit | tbd |
 

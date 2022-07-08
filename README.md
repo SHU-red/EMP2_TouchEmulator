@@ -56,18 +56,18 @@ Yellow Connector as shown below:
 - 125 kBaud
 
 ### Toggle StartStop
-- Message ID: 0x1A9
-- Byte: 6
-- Bit: 7
+| Message ID | 0x1A9 |
+| Byte | 6 |
+| Bit | 7 |
 
 #### Example
 - ON/OFF = 0x00 0x00 0x00 0x00 0x00 0x00 **0x50** 0x00
 - TOGGLE = 0x00 0x00 0x00 0x00 0x00 0x00 **0xD0** 0x00
 
 ### Activate Android Auto
-- Message ID: tbd
-- Byte: tbd
-- Bit: tbd
+| Message ID | tbd |
+| Byte | tbd |
+| Bit | tbd |
 
 ## Solution
 

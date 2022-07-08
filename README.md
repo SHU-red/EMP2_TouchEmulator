@@ -98,6 +98,8 @@ Yellow Connector as shown below:
 - If some functions shall be deactivated, the corresponding line of code can be out-commented
 
 ### Code behavior overview
+
+(Just an example and may not always be up to date with the current python-script)
 1. Raspberry Pi boots (LED permanently ON)
 2. Sleep 10s
 3. Read Message 1A9 from CAN

@@ -77,6 +77,8 @@ Yellow Connector as shown below:
 - [Raspberry Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/) with MicroPython installed
 - [Waveshare Pico-CAN-A](https://www.waveshare.com/wiki/Pico-CAN-A) Raspberry Pi Pico Hat
 
+![Picture of prepared device](doc/)
+
 ### Wiring
 
 #### Waveshare Pico-CAN-A

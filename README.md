@@ -5,12 +5,10 @@
 - You should not modify anything in your vehicle nor influence the CAN-Bus, especially not if you are using your vehicle on public roads or areas
 - You (and noone else) are fully responsible for your actions
 - If you have questions/problems with your vehicle, please contact your dealer
-- All shown informations are gathered by
-  - Trial and error search electrical wiring for CAN-Buses
-  - Sniffing CAN and reverse engineer CAN behaviour when e.g. StSt function is toggled
+- All shown informations are gathered by ...
+  - ... trial and error search electrical wiring for CAN-Buses
+  - ... sniffing CAN and reverse engineer CAN behaviour when e.g. StSt function is toggled
 - The shown content (Pins, Colors, Positions, IDs, ...) are detemined from a Toyota Proace City, thats why you have to expect deviations to other models
-
----
 
 ## Description
 
@@ -21,8 +19,6 @@ For example:
 - Toggle Start-Stop Button
 - Activate Android Auto
 - ...
-
----
 
 ## Vehicles
 
@@ -36,8 +32,6 @@ The below described device to use the vehicle CAN-Bus to emulate user inputs cou
 - Vauxhall/Opel Combo
 - Fiat Doblo
 - ...
-
----
 
 ## Used interface
 
@@ -75,8 +69,6 @@ Yellow Connector as shown below:
 - Byte: tbd
 - Bit: tbd
 
----
-
 ## Solution
 
 ### Used devices
@@ -99,7 +91,7 @@ Yellow Connector as shown below:
 
 ### Code behavior overview
 
-(Just an example and may not always be up to date with the current python-script)
+Just an example and may not always be up to date with the current python-script
 1. Raspberry Pi boots (LED permanently ON)
 2. Sleep 10s
 3. Read Message 1A9 from CAN

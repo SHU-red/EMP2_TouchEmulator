@@ -51,10 +51,12 @@ Yellow Connector as shown below:
 ![CAN INFO DIV Connector](doc/CAN_INFO_DIV_Connector.jpg)
 
 ### Pins/Wires
-- Pin ?? = Ground            = Wire Color ???
-- Pin 29 = 5V Supply         = Wire Color ?GREEN? (Only supplied if vehicle ignition = ON)
-- Pin 34 = CAN INFO DIV High = Wire Color BROWN
-- Pin 36 = CAN INFO DIV Low  = Wire Color BLUE
+| Pin # | Description | Wire Color |
+| --- | --- | --- |
+| tbd | Ground | tbd |
+| 29 | 5V USB Supply | ?Green? |
+| 34 | CAN INFO DIV High | BROWN |
+| 36 | CAN INFO DIV Low | BLUE |
 
 ### Baudrate
 - 125 kBaud

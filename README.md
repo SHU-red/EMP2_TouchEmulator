@@ -93,7 +93,7 @@ Yellow Connector as shown below:
 
 ### Code behavior overview
 
-Just an example and may not always be up to date with the current python-script ➡ Please have a look at the current scripts
+Just an example and may not always be up to date with the current python-script, so please have a look at the current scripts for detailled functionality
 1. Raspberry Pi boots (LED permanently ON)
 2. Sleep 10s
 3. Read Message 1A9 from CAN

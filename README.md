@@ -56,7 +56,7 @@ Yellow Connector as shown below:
 - 125 kBaud
 
 ### Toggle StartStop
-| | |
+| <!-- --> | <!-- --> |
 | --- | --- |
 | Message ID | 0x1A9 |
 | Byte | 6 |

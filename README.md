@@ -3,7 +3,7 @@
 ## Disclaimer :warning:
 - The shown content is just done for learning and educational purposes on private ground
 - You should not modify anything in your vehicle nor influence the CAN-Bus, especially not if you are using your vehicle on public roads or areas
-- You (and noone else) are fully responsible for your actions
+- You **and noone else** are fully responsible for your actions
 - If you have questions/problems with your vehicle, please contact your dealer
 - All shown informations are gathered by ...
   - ... trial and error search electrical wiring for CAN-Buses
@@ -12,7 +12,7 @@
 
 ## Description
 
-Automation of user-inputs as if the touch-display was used.
+Automation of user-inputs as if the touch-display was used, by sending messages on vehicle CAN-Bus from a rapid prototyping device.
 
 For example:
 
@@ -23,7 +23,7 @@ For example:
 ## Vehicles
 
 ### Compatibility
-The below described device to use the vehicle CAN-Bus to emulate user inputs could/should work for all vehicles built on the [EMP2 Platform](https://en.wikipedia.org/wiki/PSA_EMP2_platform)
+The below described device to use the vehicle CAN-Bus to emulate user inputs could/should work for all vehicles built on the [EMP2 Platform](https://en.wikipedia.org/wiki/PSA_EMP2_platform).
 
 ### Examples
 - Toyota Proace (City) (Used for development)
@@ -93,7 +93,7 @@ Yellow Connector as shown below:
 
 ### Device behavior example
 
-Just an example and may not always be up to date with the current python-script, so please have a look at the current scripts for detailled functionality
+Just an example and may not always be up to date with the current python-script, so please have a look at the current scripts for detailled functionality.
 
 1. Raspberry Pi boots (LED permanently ON)
 2. Sleep 10s

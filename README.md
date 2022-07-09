@@ -3,7 +3,7 @@
 ## Disclaimer :warning:
 - The shown content is just done for learning and educational purposes on private ground
 - You should not modify anything in your vehicle nor influence the CAN-Bus, especially not if you are using your vehicle on public roads or areas
-- You *and noone else* are fully responsible for your actions
+- You are fully responsible for your actions _and noone else_
 - If you have questions/problems with your vehicle, please contact your dealer
 - All shown informations are gathered by ...
   - ... trial and error search electrical wiring for CAN-Buses

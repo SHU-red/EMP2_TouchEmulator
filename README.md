@@ -30,7 +30,7 @@ The below described device to use the vehicle CAN-Bus to emulate user inputs cou
 - Fiat Doblo
 - ...
 
-## Used interface
+## Interface
 
 ### Name
 - CAN INFO DIV
@@ -41,16 +41,14 @@ Yellow Connector as shown below:
 
 ![CAN INFO DIV Connector](doc/CAN_INFO_DIV_Connector.jpg)
 
-### Pins/Wires
-
-#### CAN
+### CAN
 
 | Pin # | Description | Wire Color |
 | --- | --- | --- |
 | 34 | CAN INFO DIV High | Brown |
 | 36 | CAN INFO DIV Low | Blue |
 
-#### MicroUSB Power supply
+### MicroUSB Power supply
 
 - Was taken from USB charging plug in backseat row
 - This plug is controlled as it should be (Active when vehicle ingintion is ON)
@@ -58,12 +56,16 @@ Yellow Connector as shown below:
 ### Baudrate
 - 125 kBaud
 
-### Toggle StartStop
+## Functions
+
+### Turn OFF StartStop
+
 | Message ID | Byte | Bit |
 | --- | --- | --- |
 | 0x1A9 | 6 | 7 |
 
-#### Example
+#### Message example
+
 - ON/OFF = 0x00 0x00 0x00 0x00 0x00 0x00 ***0x50*** 0x00
 - TOGGLE = 0x00 0x00 0x00 0x00 0x00 0x00 ***0xD0*** 0x00
 

@@ -14,11 +14,8 @@
 
 Automation of user-inputs as if the touch-display was used, by sending messages on vehicle CAN-Bus from a rapid prototyping device.
 
-For example:
-
-- Toggle Start-Stop Button
-- Activate Android Auto
-- ...
+Main goal:
+- Toggle Start-Stop Button after each vehicle start automatically to OFF
 
 ## Vehicles
 
@@ -45,12 +42,18 @@ Yellow Connector as shown below:
 ![CAN INFO DIV Connector](doc/CAN_INFO_DIV_Connector.jpg)
 
 ### Pins/Wires
+
+#### CAN
+
 | Pin # | Description | Wire Color |
 | --- | --- | --- |
-| tbd | Ground | tbd |
-| 29 | 5V USB Supply | ?Green? |
 | 34 | CAN INFO DIV High | Brown |
 | 36 | CAN INFO DIV Low | Blue |
+
+#### MicroUSB Power supply
+
+- Was taken from USB charging plug in backseat row
+- This plug is controlled as it should be (Active when vehicle ingintion is ON)
 
 ### Baudrate
 - 125 kBaud
@@ -65,9 +68,12 @@ Yellow Connector as shown below:
 - TOGGLE = 0x00 0x00 0x00 0x00 0x00 0x00 ***0xD0*** 0x00
 
 ### Activate Android Auto
-| Message ID | Byte | Bit |
-| --- | --- | --- |
-| tbd | tbd | tbd |
+
+Not found on CAN INFO DIV
+
+### Deactivate Lane Assistant
+
+Not found on CAN INFO DIV
 
 ## Solution
 

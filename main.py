@@ -68,9 +68,9 @@ print("=== Waiting for 10s")
 time.sleep(10)
 
 # Read message
-print("=== Receive Message [LED BLINK FAST]")
 read = ''
 while not read:
+    print("=== Wait for Message [LED BLINK FAST]")
     read = can.CAN_Revice()
     led.toggle()
     time.sleep(0.5)

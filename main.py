@@ -4,7 +4,6 @@ from machine import UART,Pin,Timer
 import time
 
 led = Pin(25, Pin.OUT)
-LED_state = True
 
 class E810_TTL_CAN(object):
     def __init__(self, CFG_PIN=2, RESET_PIN=3):
@@ -31,17 +30,10 @@ class E810_TTL_CAN(object):
         return rxData
     
     def CAN_SetCAN(self):
-        print("Set can config, LED Flashing 2HZ")
         # cfg pin = 0
         self.Cfg.value(1) #hardward set
         # self.uart.write("+++") #SOFT SET
         time.sleep(0.1) # must have
-        
-#         print("AT")
-#         self.uart.write("AT\r")
-#         self.uart.readline()
-#         rxD = self.uart.readline()
-#         print(rxD.decode('utf-8'))
         
         #AT+CAN=<baud,id,mode><CR>
         #baud： CAN baud: kbps(6，10，20，50，100，120，125，150，200，250，400，500，600，750，1000)
@@ -54,35 +46,47 @@ class E810_TTL_CAN(object):
         #self.uart.write("AT+CAN=100,0,NDTF\r")
         #self.uart.readline()
         rxD = self.uart.readline()
-        print(rxD.decode('utf-8'))
         
         time.sleep(0.1)
         self.Cfg.value(0)
         self.CAN_Reset()
         time.sleep(0.1)
 
-# Define CAN variable
+# Delare CAN class
 can = E810_TTL_CAN()
 
 # Turing on LED to show activity
-print("=== Starting PowerUp")
-led.value(LED_state)
+print("=== Starting PowerUp [LED ON]")
+led.value(True)
 
 # Set CAN properties
-print("=== Set CAN settings")
+print("=== Set CAN")
 can.CAN_SetCAN()
 
 # Do nothing at the Beginning
 print("=== Waiting for 10s")
 time.sleep(10)
 
+# Read message
+print("=== Receive Message [LED BLINK FAST]")
+read = ''
+while not read:
+    read = can.CAN_Revice()
+    led.toggle()
+    time.sleep(0.5)
+
+# Check if read is empty
+print("=== Read Message 0x1A9: " + read[7] + " " + read[6] + " " + read[5] + " " + read[4] + " " + read[3] + " " + read[2] + " " + read[1] + " " + read[0])
+
 # Send correct CAN message
-print("=== Sending CAN message")
-can.CAN_Send = '20 7F FF 00 FF 00 D0 06'
+# Example IN  '20 7F FF 00 FF 00 50 06'
+# Example OUT '20 7F FF 00 FF 00 D0 06'
+read[6] = read[6] | 128 # Set bit 7 of Byte 6
+can.CAN_Send(read[0] | (read[1] << 8) | (read[2] << 16) | (read[3] << 24) | (read[4] << 32) | (read[5] << 40) | (read[6] << 48) | (read[7] << 56))
+print("=== Sent Message 0x1A9: " + read)
 
 # Turn off LED to show finishing
-print("=== Turn Off")
-led.value(False)
-
-
-
+print("=== Standby [LED BLINK SLOW])")
+while true:
+    led.toggle()
+    time.sleep(2)

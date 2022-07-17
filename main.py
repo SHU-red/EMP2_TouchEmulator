@@ -23,10 +23,11 @@ class E810_TTL_CAN(object):
         self.uart.write(txData)
     
     def CAN_Revice(self):
-        #rxData = bytes()
-        #while  self.uart.any()>0 && self.uart.read(1)!='':
-        rxData = self.uart.read(1)
+        rxData = bytes()
+        #while self.uart.any()>0 && self.uart.read(1)!='':
+        rxData = self.uart.read()
         #print(rxData.decode('utf-8'))
+        print(rxData)
         return rxData
     
     def CAN_SetCAN(self):
@@ -41,19 +42,28 @@ class E810_TTL_CAN(object):
         #mode2 mode： NDTF -> sends standard data frames
         #             EDTF -> sends extended data frame
         #AT+CAN=100,0,NDTF <CR>
-        print("AT+CAN")
-        self.uart.write("AT+CAN=125,0x1A9,NDTF\r")
-        #self.uart.write("AT+CAN=100,0,NDTF\r")
-        #self.uart.readline()
-        rxD = self.uart.readline()
+        print("set AT+CAN + Protocol- Mode")
+        self.uart.write('AT+MODE=PROTOL\r')
+        self.uart.write("AT+CAN=125,0,NDTF\r")
         
         time.sleep(0.1)
         self.Cfg.value(0)
         self.CAN_Reset()
         time.sleep(0.1)
+        
+    def Return(self):
+        print("")
+        print("[Return]")
+        print(can.uart.readline())
+        print(can.uart.readline())
+        print("")
+
 
 # Delare CAN class
 can = E810_TTL_CAN()
+
+# Show return values
+can.Return()
 
 # Turing on LED to show activity
 print("=== Starting PowerUp [LED ON]")
@@ -63,30 +73,21 @@ led.value(True)
 print("=== Set CAN")
 can.CAN_SetCAN()
 
-# Do nothing at the Beginning
-print("=== Waiting for 10s")
-time.sleep(10)
+# Show return values
+can.Return()
 
-# Read message
-read = ''
-while not read:
-    print("=== Wait for Message [LED BLINK FAST]")
-    read = can.CAN_Revice()
-    led.toggle()
-    time.sleep(0.5)
+print("=== Waiting for 20s")
+time.sleep(20)
+led.toggle()
 
-# Check if read is empty
-print("=== Read Message 0x1A9: " + read[7] + " " + read[6] + " " + read[5] + " " + read[4] + " " + read[3] + " " + read[2] + " " + read[1] + " " + read[0])
+# Send Message in Protocol mode
+can.CAN_Send(b'\x08\x00\x00\x01\xA9\x20\x7F\xFF\x00\xFF\x00\xD0\x00')
 
-# Send correct CAN message
-# Example IN  '20 7F FF 00 FF 00 50 06'
-# Example OUT '20 7F FF 00 FF 00 D0 06'
-read[6] = read[6] | 128 # Set bit 7 of Byte 6
-can.CAN_Send(read[0] | (read[1] << 8) | (read[2] << 16) | (read[3] << 24) | (read[4] << 32) | (read[5] << 40) | (read[6] << 48) | (read[7] << 56))
-print("=== Sent Message 0x1A9: " + read)
+# Show return values
+can.Return()
 
-# Turn off LED to show finishing
+# Go to infinite Standby
 print("=== Standby [LED BLINK SLOW])")
-while true:
+while True:
     led.toggle()
     time.sleep(2)

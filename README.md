@@ -95,9 +95,7 @@ Seems not to be controlled via ***CAN INFO DIV***
 
 Just an example and may not always be up to date with the current python-script, so please have a look at the current scripts for detailled functionality.
 
-1. Raspberry Pi boots (LED permanently ON)
-2. Sleep 10s
-3. Read Message 1A9 from CAN
-4. Set Bit 7 in Byte 6
-5. Send modified Message 1A9 (Should toggle current StSt-State)
-6. Raspberry Pi standby until 5V supply is interrupted (LED blinking)
+1. Vehicle turned ON
+2. Raspberry Pi boots and waits e.g. 20s
+3. Message 1A9 is sent
+4. Raspberry Pi goes to Standby (e.g. blinking LED)

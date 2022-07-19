@@ -96,7 +96,12 @@ Seems not to be controlled via ***CAN INFO DIV***
 
 Just an example and may not always be up to date with the current python-script, so please have a look at the current scripts for detailled functionality.
 
-1. Vehicle turned ON
-2. Raspberry Pi boots and waits e.g. 20s
-3. Message 1A9 is sent
-4. Raspberry Pi goes to Standby (e.g. blinking LED)
+1. Vehicle turned ON > Turns ON the PiPico
+2. LED set to be ON
+3. Initialize CAN-controller
+4. Wait 20s
+5. Read last Message with ID 0x1A9
+6. Get payload of this message
+7. Set bit 7 on byte 6 via binary-OR-operation
+8. Send same frame but with new payload
+9. StSt-Button should be toggled

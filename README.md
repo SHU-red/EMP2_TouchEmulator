@@ -84,7 +84,7 @@ Seems not to be controlled via ***CAN INFO DIV***
 ### Wiring
 
 - ***CANPico*** CAN High and Low connected to the corresponding Pins in the vehicle
-- ***PiPico Supply*** connected to the USB charging-port, placed in the rear-compartment (This one is ON and OFF, corresponding to the vehicle ignition)
+- ***PiPico*** micro-USB supply connected to the USB charging-port, placed in the rear-compartment (This one is ON and OFF, corresponding to the vehicle ignition)
 
 ### Code
 - [main.py](main.py) written in pyton

@@ -60,16 +60,16 @@ Baudrate:  `125 kBaud`
 
 #### Message example
 
-- ON/OFF = `0x00 0x00 0x00 0x00 0x00 0x00 ***0x50*** 0x00`
-- TOGGLE = `0x00 0x00 0x00 0x00 0x00 0x00 ***0xD0*** 0x00`
+- ON/OFF = `0x00 0x00 0x00 0x00 0x00 0x00 0x50 0x00`
+- TOGGLE = `0x00 0x00 0x00 0x00 0x00 0x00 0xD0 0x00`
 
 ### Activate Android Auto
 
-Seems not to be controlled via `CAN INFO DIV`
+Seems not to be controlled via ***CAN INFO DIV***
 
 ### Deactivate Lane Assistant
 
-Seems not to be controlled via `CAN INFO DIV`
+Seems not to be controlled via ***CAN INFO DIV***
 
 ## Solution
 
@@ -83,8 +83,8 @@ Seems not to be controlled via `CAN INFO DIV`
 
 ### Wiring
 
-- `CANPico Board` CAN High and Low connected to the corresponding Pins in the vehicle
-- `MicroUSB Supply` connected to the USB-Charging-Port, placed in the rear-compartment (This one is ON and OFF, corresponding to the vehicle ignition)
+- ***CANPico Board*** CAN High and Low connected to the corresponding Pins in the vehicle
+- ***MicroUSB Supply*** connected to the USB-Charging-Port, placed in the rear-compartment (This one is ON and OFF, corresponding to the vehicle ignition)
 
 ### Code
 - [main.py](main.py) written in pyton

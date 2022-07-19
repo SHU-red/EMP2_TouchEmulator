@@ -20,7 +20,7 @@ Main goal:
 ## Vehicles
 
 ### Compatibility
-The below described device to use the vehicle CAN-Bus to emulate user inputs could/should work for all vehicles built on the [EMP2 Platform](https://en.wikipedia.org/wiki/PSA_EMP2_platform).
+The below described device to emulate user inputs via CAN-Bus could/should work for all vehicles built on the [EMP2 Platform](https://en.wikipedia.org/wiki/PSA_EMP2_platform).
 
 ### Examples
 - Toyota Proace (City) (Used for development)
@@ -47,8 +47,8 @@ Baudrate:  `125 kBaud`
 
 | Pin | Description | Wire Color |
 | --- | --- | --- |
-| 34 | CAN INFO DIV High | Brown |
-| 36 | CAN INFO DIV Low | Blue |
+| `34` | CAN INFO DIV High | Brown |
+| `36` | CAN INFO DIV Low | Blue |
 
 ## Functions
 

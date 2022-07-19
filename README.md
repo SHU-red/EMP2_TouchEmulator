@@ -105,3 +105,4 @@ Just an example and may not always be up to date with the current python-script,
 7. Set bit 7 on byte 6 via binary-OR-operation
 8. Send same frame but with new payload
 9. StSt-Button should be toggled
+10. Infinite waiting loop with blinking LED

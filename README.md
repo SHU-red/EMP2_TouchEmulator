@@ -86,6 +86,7 @@ Seems not to be controlled via ***CAN INFO DIV***
 
 - ***CANPico*** CAN High and Low connected to the corresponding Pins in the vehicle
 - ***PiPico*** micro-USB supply connected to the USB charging-port, placed in the rear-compartment (This one is ON and OFF, corresponding to the vehicle ignition)
+- ***Termination Resistor Jumper*** has to be taken OFF the board, to not add additional resistors to the already running vehicle-network
 
 ### Code
 - [main.py](main.py) written in pyton

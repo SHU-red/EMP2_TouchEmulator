@@ -43,18 +43,12 @@ Yellow Connector as shown below:
 
 ### CAN
 
-| Pin # | Description | Wire Color |
+Baudrate:  `125 kBaud`
+
+| Pin | Description | Wire Color |
 | --- | --- | --- |
 | 34 | CAN INFO DIV High | Brown |
 | 36 | CAN INFO DIV Low | Blue |
-
-### MicroUSB Power supply
-
-- Was taken from USB charging plug in backseat row
-- This plug is controlled as it should be (Active when vehicle ingintion is ON)
-
-### Baudrate
-- 125 kBaud
 
 ## Functions
 
@@ -71,33 +65,30 @@ Yellow Connector as shown below:
 
 ### Activate Android Auto
 
-Not found on CAN INFO DIV
+Seems not to be controlled via `CAN INFO DIV`
 
 ### Deactivate Lane Assistant
 
-Not found on CAN INFO DIV
+Seems not to be controlled via `CAN INFO DIV`
 
 ## Solution
 
 ### Used devices
-- [Raspberry Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/) with MicroPython installed
-- [Waveshare Pico-CAN-A](https://www.waveshare.com/wiki/Pico-CAN-A) Raspberry Pi Pico Hat
 
-![Picture of prepared device](doc/)
+![Picture of prepared device](doc/canpico.png)
+
+- [CANPico Board](https://www.raspberrypi.com/products/raspberry-pi-pico/)
+- [Firmware](https://github.com/kentindell/canhack/tree/master/pico/micropython)
+
 
 ### Wiring
 
-#### Waveshare Pico-CAN-A
-
-- CAN High/Low connected to Pins "CAN INFO DIV High", "CAN INFO DIV Low"  mentioned above
-
-#### Raspberry Pi Pico
-
-- 5V Supply via custom MicroUSB cable from Pins "5V Supply" and "Ground" mentioned above
+- `CANPico Board` CAN High and Low connected to the corresponding Pins in the vehicle
+- `MicroUSB Supply` connected to the USB-Charging-Port, placed in the rear-compartment (This one is ON and OFF, corresponding to the vehicle ignition)
 
 ### Code
-- [main.py](main.py) written in python
-- If some functions shall be deactivated, the corresponding line of code can be out-commented
+- [main.py](main.py) written in pyton
+- Just open the code and download it to the PiPico with [Thonny](https://thonny.org/)
 
 ### Device behavior example
 

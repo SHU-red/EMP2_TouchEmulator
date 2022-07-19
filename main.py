@@ -28,7 +28,7 @@ payload = frames[0].get_data()
 
 # Set Bit 7 on Byte 6
 a = payload
-b = b'\x00\x00\x00\x00\x00\x00\xD0\x00'
+b = b'\x00\x00\x00\x00\x00\x00\x80\x00'
 payload = (int.from_bytes(a, 'big') | int.from_bytes(b, 'big')).to_bytes(max(len(a), len(b)), 'big')
 
 # Notify

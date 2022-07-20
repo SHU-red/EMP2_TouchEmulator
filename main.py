@@ -19,12 +19,8 @@ print("=== Initializing CAN")
 # Only use ID 1A9
 c = CAN(profile=CAN.BITRATE_125K_75,id_filters=id_filter)
 
-
-
-# Read frame
-
-
-if True: # True for vehicle, False for offline Testing
+# Switch between vehicle and offline testing
+if True: # True for vehicle, False for offline testing
     
     # Wait for 30s
     print("=== Wait for 30s")
@@ -44,8 +40,6 @@ else:
 # Output payload
 print("=== Read payload from CAN")
 print(payload)
-
-
 
 # Set Bit 7 on Byte 6
 a = payload

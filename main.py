@@ -17,8 +17,8 @@ inwork = True
 loop = 1
 
 # Waiting for vehicle to poperly boot
-print("=== Wait for 30s")
-time.sleep(30)
+print("=== Wait for 10s")
+time.sleep(10)
 
 # Filter IDs
 id_filter_state = {0: CANID(0x227).get_id_filter()}
@@ -50,7 +50,7 @@ while inwork:
     if a != n:
 
         print("=== StSt is now OFF")
-        inwork = False
+        # inwork = False # Uncomment if you want the Pi to stop checking the status to infinity
 
     else:
 
